@@ -6,13 +6,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-/*
- * Why use thread?
- *  1. make full use of multi core cpu
- *  2. better for single cpu
- *      1) io-bound 
- *      2) simulate concurrency
- */
+
 namespace CreateAThread
 {
     internal class Program
@@ -45,7 +39,7 @@ namespace CreateAThread
 
         static void WriteThreadName(string extra)
         {
-            Console.WriteLine( $"thread name:{Thread.CurrentThread.Name}:{extra}"); 
+            Console.WriteLine($"thread name:{Thread.CurrentThread.Name}:{extra}");
         }
 
     }
