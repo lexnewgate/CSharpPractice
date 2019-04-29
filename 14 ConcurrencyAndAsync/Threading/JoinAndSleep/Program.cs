@@ -1,46 +1,71 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
+
+/**
+ *  Sleep and Join make program block.
+ *
+ *  t.Join means wait for t to end
+ *
+ *  sleep(0) and thread.yield relinquish to other threads
+ *  yield only relinquish to other threads on same core
+ */
+
+/*
+ * Thread state can only be used for debug;
+ */
+
+/*
+ *  Blocking or unblocking cause context switch. Small overhead typically 1 or 2 microsecs.
+ *
+ *  Two bounds: i/o bound and compute bound
+ */
+
+/*
+ * block vs spin
+ *
+ * spin:
+ * 1. periodically spin
+ * 2. spin continuously
+ *
+ * 1 vs 2 turn i/o bound into compute bound waste cpu. But it will better in case of context switching
+ * blocking itself does not incur zero cost. Async helps.
+ */
 
 namespace JoinAndSleep
 {
-    static class Program
+    internal static class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-            Thread t= new Thread(WriteY);
-
-            Thread watcht= new Thread(()=>
-            {
-                IsTAlive(t);
-            });
-
+            var t= new Thread(WriteY);
             t.Start();
-            watcht.Start();
 
-            Console.WriteLine(t.ThreadState.Simplify());
-
-        }
-
-        static void IsTAlive(Thread t)
-        {
-            while (t.IsAlive)
+            new Thread((() =>
             {
-                Console.WriteLine(t.ThreadState.Simplify());
+                while (true)
+                {
+                    if (Console.ReadKey().Key == ConsoleKey.A)
+                    {
+                        Console.WriteLine("press a");
+                    }
+                }
+            })).Start();
+
+            t.Join();
+
+
+            for (var i = 0; i < 10; i++)
+            {
+                Console.Write("x");
                 Thread.Sleep(TimeSpan.FromSeconds(1));
             }
 
-            Console.WriteLine("t is dead");
+
         }
 
-
-        static void WriteY()
+        private static void WriteY()
         {
-
-            for (int i = 0; i < 10; i++)
+            for (var i = 0; i < 10; i++)
             {
                 Console.Write("y");
                 Thread.Sleep(TimeSpan.FromSeconds(1));
@@ -50,7 +75,7 @@ namespace JoinAndSleep
 
         public static ThreadState Simplify(this ThreadState ts)
         {
-            return ts&(ThreadState.Unstarted|ThreadState.WaitSleepJoin|ThreadState.Stopped);
+            return ts & (ThreadState.Unstarted | ThreadState.WaitSleepJoin | ThreadState.Stopped);
         }
     }
 }
