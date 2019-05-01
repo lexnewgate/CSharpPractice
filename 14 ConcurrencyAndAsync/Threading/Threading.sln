@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02 JoinAndSleep", "02 JoinA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03 LocalVsSharedState", "03 LocalVsSharedState\03 LocalVsSharedState.csproj", "{D5292813-84B8-4EAF-A853-EB9DC6BCE5BC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04 Locking and Thread Safety", "04 Locking and Thread Safety\04 Locking and Thread Safety.csproj", "{24F209EB-6A1D-4E4A-B379-D098B6CD357B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{D5292813-84B8-4EAF-A853-EB9DC6BCE5BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D5292813-84B8-4EAF-A853-EB9DC6BCE5BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D5292813-84B8-4EAF-A853-EB9DC6BCE5BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24F209EB-6A1D-4E4A-B379-D098B6CD357B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24F209EB-6A1D-4E4A-B379-D098B6CD357B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24F209EB-6A1D-4E4A-B379-D098B6CD357B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24F209EB-6A1D-4E4A-B379-D098B6CD357B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
