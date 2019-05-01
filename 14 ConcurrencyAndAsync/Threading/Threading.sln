@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreateAThread", "CreateAThread\CreateAThread.csproj", "{8744BF1D-6BD8-409C-9FDB-9937E3E36E16}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01 CreateAThread", "01 CreateAThread\01 CreateAThread.csproj", "{8744BF1D-6BD8-409C-9FDB-9937E3E36E16}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JoinAndSleep", "JoinAndSleep\JoinAndSleep.csproj", "{CB0AACD1-A149-4E9A-AD76-37A846E2DA99}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02 JoinAndSleep", "02 JoinAndSleep\02 JoinAndSleep.csproj", "{CB0AACD1-A149-4E9A-AD76-37A846E2DA99}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
