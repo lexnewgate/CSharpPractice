@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03 LocalVsSharedState", "03
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04 Locking and Thread Safety", "04 Locking and Thread Safety\04 Locking and Thread Safety.csproj", "{24F209EB-6A1D-4E4A-B379-D098B6CD357B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05 PassingDataToThread", "05 PassingDataToThread\05 PassingDataToThread.csproj", "{99D4F610-2DF0-494B-9426-7DC353F7F539}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06 Exception Handling", "06 Exception Handling\06 Exception Handling.csproj", "{429BB4E7-FA1F-4706-A112-276F5A9C829C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{24F209EB-6A1D-4E4A-B379-D098B6CD357B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{24F209EB-6A1D-4E4A-B379-D098B6CD357B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{24F209EB-6A1D-4E4A-B379-D098B6CD357B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99D4F610-2DF0-494B-9426-7DC353F7F539}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99D4F610-2DF0-494B-9426-7DC353F7F539}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99D4F610-2DF0-494B-9426-7DC353F7F539}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99D4F610-2DF0-494B-9426-7DC353F7F539}.Release|Any CPU.Build.0 = Release|Any CPU
+		{429BB4E7-FA1F-4706-A112-276F5A9C829C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{429BB4E7-FA1F-4706-A112-276F5A9C829C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{429BB4E7-FA1F-4706-A112-276F5A9C829C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{429BB4E7-FA1F-4706-A112-276F5A9C829C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{99D4F610-2DF0-494B-9426-7DC353F7F539}</ProjectGuid>
+    <ProjectGuid>{429BB4E7-FA1F-4706-A112-276F5A9C829C}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>_05_PassingDataToThread</RootNamespace>
-    <AssemblyName>05 PassingDataToThread</AssemblyName>
+    <RootNamespace>_06_Exception_Handling</RootNamespace>
+    <AssemblyName>06 Exception Handling</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
