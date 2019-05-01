@@ -27,7 +27,7 @@ using System.Threading;
  * 1. periodically spin
  * 2. spin continuously
  *
- * 1 vs 2 turn i/o bound into compute bound waste cpu. But it will better in case of context switching
+ * 1 => 2 turn i/o bound into compute bound waste cpu. But it will better in case of context switching
  * blocking itself does not incur zero cost. Async helps.
  */
 
