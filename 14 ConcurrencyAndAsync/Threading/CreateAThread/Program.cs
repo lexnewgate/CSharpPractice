@@ -1,35 +1,47 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
+
 namespace CreateAThread
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-            Thread t = new Thread(WriteY);
+            //thread start is a action with com visible attr. what is com? what is attribute?
+            var t = new Thread(WriteY);
+
+
+            Console.WriteLine($"thread alive:{t.IsAlive}");
             t.Start();
+            t.Name = "writey"; //thread can have name
 
-            for (int i = 0; i < 1000; i++)
+            Console.WriteLine($"thread alive:{t.IsAlive}");
+
+            for (var i = 0; i < 1000; i++)
             {
-               Console.Write("x"); 
+                WriteThreadName("x");
             }
-
         }
 
-        static void WriteY()
+        private static void WriteY()
         {
-
-            for (int i = 0; i < 1000; i++)
+            for (var i = 0; i < 1000; i++)
             {
-               Console.Write("y"); 
+                WriteThreadName("y");
             }
-
         }
+
+        static void WriteThreadName(string extra)
+        {
+            Console.WriteLine($"thread name:{Thread.CurrentThread.Name}:{extra}");
+        }
+
     }
 
 }
