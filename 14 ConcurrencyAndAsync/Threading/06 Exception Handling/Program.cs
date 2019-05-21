@@ -7,7 +7,7 @@ using System.Threading;
 
 /*
 *
-* Any try/catch/finally blocks in effect when a thread is created are of 
+* Any try/catch/finally blocks when a thread is created are of 
 * no relevance to the thread when it starts executing. 
 * 
 * This behavior makes sense when you consider that each thread has an 
@@ -21,25 +21,35 @@ namespace _06_Exception_Handling
     {
         static void Main(string[] args)
         {
-            new Thread(() =>
+
+            var catchExInThread = new Thread(() =>
+              {
+                  try
+                  {
+                      Go();
+                  }
+                  catch (Exception ex)
+                  {
+                      Console.WriteLine($"{Thread.CurrentThread.Name} exception");
+                  }
+              });
+            catchExInThread.Name = nameof(catchExInThread);
+            catchExInThread.Start();
+
+
+
+
+            try
             {
-                try
-                {
-                    Go();
-                }
-                catch(Exception ex)
-                {
-                    Console.WriteLine("exception");
-                }
-            }).Start();
-            //try
-            //{
-            //    new Thread(Go).Start();
-            //}
-            //catch(Exception ex)
-            //{
-            //    Console.WriteLine("exception");
-            //}
+                var catchExInOutThread = new Thread(Go);
+                catchExInOutThread.Name = nameof(catchExInOutThread);
+
+                catchExInOutThread.Start();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"{Thread.CurrentThread.Name} exception");
+            }
         }
 
 

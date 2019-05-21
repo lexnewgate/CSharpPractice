@@ -10,19 +10,22 @@ namespace CreateAThread
         {
             Thread.CurrentThread.Name = "MainThread";
             //thread start is a action with com visible attr. what is com? what is attribute?
-            var t = new Thread(WriteY);
 
+            var job = new Thread(WriteY);
+            job.Name = "writey"; //thread can have name
+            job.Start();
 
-            Console.WriteLine($"thread alive:{t.IsAlive}");
-            t.Start();
-            t.Name = "writey"; //thread can have name
-
-            Console.WriteLine($"thread alive:{t.IsAlive}");
+            Console.WriteLine($"thread alive:{job.IsAlive}");
 
             for (var i = 0; i < 10; i++)
             {
-                ThreadPrint("x");
+                ThreadPrint($"x {i}");
+                if (job.IsAlive)
+                {
+                    Console.WriteLine($"{job.Name} is still alive");
+                }
                 Thread.Sleep(TimeSpan.FromSeconds(1));
+
             }
         }
 
@@ -30,8 +33,8 @@ namespace CreateAThread
         {
             for (var i = 0; i < 10; i++)
             {
-                ThreadPrint("y");
-                Thread.Sleep(TimeSpan.FromSeconds(1));
+                ThreadPrint($"y {i}");
+                Thread.Sleep(TimeSpan.FromSeconds(0.5));
             }
         }
 
