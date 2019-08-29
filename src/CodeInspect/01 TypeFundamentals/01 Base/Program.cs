@@ -22,12 +22,18 @@ namespace _01_Base
         }
     }
 
+    struct MyStruct
+    {
+        
+    }
 
 
     class Program
     {
         static void Main(string[] args)
         {
+            int a = 0;
+            //System.ValueType
             new DerivedClass();
         }
     }

@@ -24,14 +24,23 @@ namespace _02_CastTypes
     }
 
 
+    class AClass
+    {
+        
+    }
+
+    struct BStruct
+    {
+        
+    }
+
 
     class Program
     {
         static void Main(string[] args)
         {
-            //DerivedClass derived= (DerivedClass)new BaseClass();
-
-            DerivedClass derived= new BaseClass() as DerivedClass;
+            int a = 5;
+            System.ValueType b = a;
         }
     }
 }
